@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "Culio - AI-Driven Restaurant Engagement",
     description:
       "Culio gives your restaurant AI-driven engagement, automated ordering, and the strategic intelligence needed to turn every diner into a lifelong regular.",
-    images: ["/assets/common/thumbnail.png"],
+    images: ["/assets/thumbnail.png"],
   },
   icons: "/favicon.ico",
 };

@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport = {
+  maximumScale: 1,
+};
+
 const baseUrl = "https://culio.co";
 
 export const metadata: Metadata = {

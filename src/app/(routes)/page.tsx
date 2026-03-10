@@ -1,8 +1,11 @@
+import { SlashSeparator } from "@/components/common/slash-separator"
+import Hero from "@/sections/hero"
 
 const HomePage = () => {
   return (
-    <div>
-      
+    <div className="w-full">
+      <SlashSeparator />
+      <Hero />
     </div>
   )
 }

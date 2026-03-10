@@ -3,6 +3,7 @@ import Navigation from "@/sections/navigation";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -61,8 +62,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans select-none overflow-x-hidden`}
       >
+        <Analytics />
         <Navigation />
-        <main className="min-h-[calc(100vh-112px)]">
+        <main className="min-h-[calc(100vh-96px)] md:min-h-[calc(100vh-112px)]">
           {children}
         </main>
         <Footer />

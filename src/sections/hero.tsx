@@ -29,7 +29,7 @@ const Hero = () => {
     }
 
     return (
-        <section className="flex flex-col min-h-[calc(100vh-112px)] px-2 ">
+        <section className="flex flex-col min-h-[calc(100vh-96px)] md:min-h-[calc(100vh-112px)] px-2 ">
             <div
                 className="screen-line-before screen-line-after relative flex-1 flex-col md:max-w-3xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto flex w-full items-center justify-between border-x border-edge after:z-1 after:transition-[background-color]"
             >
@@ -40,10 +40,10 @@ const Hero = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.4 }}
                     >
-                        <Badge><aside className=" size-2.5 aspect-square bg-primary mr-1" />Join the early access</Badge>
+                        <Badge><aside className=" size-2 md:size-2.5 aspect-square bg-primary mr-1" />Join the early access</Badge>
                     </motion.div>
 
-                    <TextAnimate className="mt-4 text-4xl lg:text-6xl xl:text-7xl tracking-tighter xl:leading-16 max-w-2xl text-balance text-center" animation="blurIn" as="h1">
+                    <TextAnimate className="mt-4 text-[40px] leading-10 lg:text-6xl xl:text-7xl tracking-tighter xl:leading-16 max-w-2xl text-balance text-center" animation="blurIn" as="h1">
                         We’re getting ready to launch soon
                     </TextAnimate>
 
@@ -64,7 +64,7 @@ const Hero = () => {
                                 id="hero-email-input"
                                 type="email"
                                 placeholder="Enter your email"
-                                className="h-12 w-full bg-background tracking-tight pr-10"
+                                className="h-10 md:h-12 w-full bg-background tracking-tight pr-10 text-xs md:text-sm"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
@@ -78,7 +78,7 @@ const Hero = () => {
                                 </button>
                             )}
                         </div>
-                        <Button type="submit" className="h-12 px-6 w-full lg:w-fit" loading={isLoading}>
+                        <Button type="submit" className="h-10 md:h-12 px-6 w-full lg:w-fit" loading={isLoading}>
                             Join the waitlist
                         </Button>
                     </motion.form>

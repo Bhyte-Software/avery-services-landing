@@ -14,15 +14,15 @@ interface SuccessDialogProps {
 export const SuccessDialog = ({ isOpen, setIsOpen, submittedEmail }: SuccessDialogProps) => {
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
-            <DialogContent showCloseButton={false} className="sm:max-w-sm p-0 overflow-hidden rounded-none border-edge bg-white">
+            <DialogContent showCloseButton={false} className="sm:max-w-sm p-0 overflow-hidden rounded-none border-0 outline-0 bg-white">
                 <div className="flex flex-col items-center px-4 pb-4">
-                    <div className="relative size-18 mb-4 mt-6">
+                    <div className="relative size-16 md:size-18 mb-4 mt-6">
                         <Image fill src="/assets/culio-logo-icon.svg" alt="Culio logo icon" className=" object-contain object-center animate-[spin_8s_linear_infinite]" />
                     </div>
 
-                    <Badge><aside className=" size-2.5 aspect-square bg-primary mr-1" />You're on the list</Badge>
+                    <Badge><aside className=" size-2 md:size-2.5 aspect-square bg-primary mr-1" />You're on the list</Badge>
 
-                    <p className="mt-4 text-center text-base text-muted-foreground text-balance tracking-tight">
+                    <p className="mt-4 text-center text-sm md:text-base text-muted-foreground text-balance tracking-tight">
                         We're hand-picking our founding restaurants to ensure every launch is flawless. We'll reach out to{" "}
                         <strong className="text-foreground font-medium">{submittedEmail}</strong>{" "}
                         as soon as a spot opens up.

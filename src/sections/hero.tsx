@@ -114,7 +114,7 @@ const Hero = () => {
                     </motion.span>
                 </div>
 
-                <aside className="h-full flex-1 w-full relative">
+                <aside className="h-full flex-1 w-full relative bg-background">
                     <Image fill src="/assets/hero-dither.webp" alt="Dither illustration" className=" object-cover object-bottom" />
                 </aside>
             </div>

@@ -45,7 +45,7 @@ export function ConsentManager({ children }: { children: React.ReactNode }) {
           },
           "banner.footer.sub-group": {
             noStyle: true,
-            className: "flex items-center gap-2",
+            className: "grid grid-cols-2 items-center gap-2",
           },
           "banner.footer.reject-button": {
             noStyle: true,

@@ -1,10 +1,11 @@
 import Footer from "@/sections/footer";
 import Navigation from "@/sections/navigation";
+import NavigationMobile from "@/sections/navigation-mobile";
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ConvexClientProvider } from "./ConvexClientProvider";
 import "./globals.css";
-import NavigationMobile from "@/sections/navigation-mobile";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -70,9 +71,11 @@ export default function RootLayout({
         <Analytics />
         <Navigation />
         <NavigationMobile />
-          <main className="min-h-[calc(100vh-96px)] md:min-h-[calc(100vh-112px)]">
+        <main className="min-h-[calc(100vh-96px)] md:min-h-[calc(100vh-112px)]">
+          <ConvexClientProvider>
             {children}
-          </main>
+          </ConvexClientProvider>
+        </main>
         <Footer />
       </body>
     </html>

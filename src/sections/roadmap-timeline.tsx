@@ -9,7 +9,7 @@ export function RoadmapTimeline() {
         {
             content: (
                 <div key="roadmap-1">
-                    <div className=" w-full h-80 md:h-72 lg:h-90 bg-white relative border border-edge">
+                    <div className=" w-full h-66 md:h-72 lg:h-90 bg-white relative border border-edge">
                         <Image fill src="/assets/roadmap-1.png" className=" object-contain object-top-left md:object-top border border-white/10" quality={100} alt="Changelog latest" />
                     </div>
                     <h3 className="text-xl tracking-tight text-left mt-4 font-medium font-sans">
@@ -30,7 +30,7 @@ export function RoadmapTimeline() {
         {
             content: (
                 <div key="roadmap-2">
-                    <div className=" w-full h-80 md:h-72 lg:h-90 bg-white relative border border-edge">
+                    <div className=" w-full h-66 md:h-72 lg:h-90 bg-white relative border border-edge">
                         <Image fill src="/assets/roadmap-2.png" className=" object-contain" quality={100} alt="Changelog 1" />
                     </div>
                     <h3 className="text-xl tracking-tight text-left mt-4 font-medium font-sans">

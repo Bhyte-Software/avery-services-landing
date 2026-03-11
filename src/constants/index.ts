@@ -15,6 +15,6 @@ export const navItems: NavItem[] = [
     },
     {
         title: "Contact",
-        href: "/contact",
+        href: "mailto:contact@culio.co",
     },
 ]

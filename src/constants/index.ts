@@ -2,19 +2,15 @@ import { NavItem } from "@/types";
 
 export const navItems: NavItem[] = [
     {
-        title: "Use Cases",
-        href: "/use-cases",
+        title: "Home",
+        href: "/",
     },
     {
-        title: "Roadmap",
+        title: "Our Roadmap",
         href: "/roadmap",
     },
     {
-        title: "Blog",
-        href: "/blog",
-    },
-    {
-        title: "Contact",
+        title: "Contact Us",
         href: "mailto:contact@culio.co",
     },
 ]

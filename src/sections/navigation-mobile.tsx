@@ -4,9 +4,10 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
+import CalTrigger from "@/components/common/cal-trigger";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
-import CalTrigger from "@/components/common/cal-trigger";
+import { FaXTwitter } from "react-icons/fa6";
 
 
 const NavigationMobile = () => {
@@ -108,11 +109,11 @@ const NavigationMobile = () => {
                                         transition={{ duration: 0.3, ease: "easeOut" }}
                                     >
                                         <Link
-                                            href="/use-cases"
+                                            href="/"
                                             className="block py-1 text-foreground text-base font-sans font-medium tracking-tight transition-colors duration-200"
                                             onClick={() => setOpen(false)}
                                         >
-                                            Use Cases
+                                            Home
                                         </Link>
                                     </motion.div>
 
@@ -129,27 +130,9 @@ const NavigationMobile = () => {
                                             className="block py-1 text-foreground text-base font-sans font-medium tracking-tight transition-colors duration-200"
                                             onClick={() => setOpen(false)}
                                         >
-                                            Roadmap
+                                            Our Roadmap
                                         </Link>
                                     </motion.div>
-
-
-                                    <motion.div
-                                        variants={{
-                                            hidden: { opacity: 0, y: 20 },
-                                            visible: { opacity: 1, y: 0 },
-                                        }}
-                                        transition={{ duration: 0.3, ease: "easeOut" }}
-                                    >
-                                        <Link
-                                            href="/blog"
-                                            className="block py-1 text-foreground text-base font-sans font-medium tracking-tight transition-colors duration-200"
-                                            onClick={() => setOpen(false)}
-                                        >
-                                            Blog
-                                        </Link>
-                                    </motion.div>
-
 
                                     <motion.div
                                         variants={{
@@ -160,11 +143,27 @@ const NavigationMobile = () => {
                                         transition={{ duration: 0.3, ease: "easeOut" }}
                                     >
                                         <Link
-                                            href="/contact"
+                                            href="mailto:contact@culio.co"
                                             className="block py-1 text-foreground text-base font-sans font-medium tracking-tight transition-colors duration-200"
                                             onClick={() => setOpen(false)}
                                         >
                                             Contact
+                                        </Link>
+                                    </motion.div>
+
+                                    <motion.div
+                                        variants={{
+                                            hidden: { opacity: 0, y: 20 },
+                                            visible: { opacity: 1, y: 0 },
+                                        }}
+                                        transition={{ duration: 0.3, ease: "easeOut" }}
+                                        className="pt-2 pb-4"
+                                    >
+                                        <Link href="https://twitter.com/culioco">
+                                            <Button variant="outline" className="w-full">
+                                                <FaXTwitter className="size-3.5" />
+                                                Follow Us
+                                            </Button>
                                         </Link>
                                     </motion.div>
                                 </motion.div>

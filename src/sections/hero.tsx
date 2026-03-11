@@ -2,6 +2,7 @@
 
 import { SuccessDialog } from "@/components/common/success-dialog"
 import { Badge } from "@/components/ui/badge"
+import { BorderBeam } from "@/components/ui/border-beam"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { TextAnimate } from "@/components/ui/text-animate"
@@ -40,7 +41,20 @@ const Hero = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.4 }}
                     >
-                        <Badge><aside className=" size-2 md:size-2.5 aspect-square bg-primary mr-1" />Join the early access</Badge>
+                        <Badge className="relative overflow-hidden">
+                            <BorderBeam
+                                size={40}
+                                initialOffset={20}
+                                className="from-transparent via-primary to-transparent"
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 60,
+                                    damping: 20,
+                                }}
+                            />
+                            <aside className=" size-2 md:size-2.5 aspect-square bg-primary mr-1" />
+                            Join the early access
+                        </Badge>
                     </motion.div>
 
                     <TextAnimate className="mt-4 text-[40px] leading-10 lg:text-6xl xl:text-7xl tracking-tighter xl:leading-16 max-w-2xl text-balance text-center" animation="blurIn" as="h1">
@@ -64,7 +78,7 @@ const Hero = () => {
                                 id="hero-email-input"
                                 type="email"
                                 placeholder="Enter your email"
-                                className="h-10 md:h-12 w-full bg-background tracking-tight pr-10 text-xs md:text-sm"
+                                className="h-10 md:h-12 w-full bg-background tracking-tight pr-10 text-sm font-sans font-normal"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
@@ -94,7 +108,7 @@ const Hero = () => {
                 </div>
 
                 <aside className="h-full flex-1 w-full relative">
-                    <Image fill src="/assets/hero-dither.png" alt="Dither illustration" className=" object-cover object-bottom" />
+                    <Image fill src="/assets/hero-dither.webp" alt="Dither illustration" className=" object-cover object-bottom" />
                 </aside>
             </div>
 

@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     siteName: "Culio",
     description:
       "Culio gives your restaurant AI-driven engagement, automated ordering, and the strategic intelligence needed to turn every diner into a lifelong regular.",
-    images: ["/assets/thumbnail.png"],
+    images: ["/assets/thumbnail.webp"],
     url: `${baseUrl}`,
   },
   twitter: {
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "Culio - AI-Driven Restaurant Engagement",
     description:
       "Culio gives your restaurant AI-driven engagement, automated ordering, and the strategic intelligence needed to turn every diner into a lifelong regular.",
-    images: ["/assets/thumbnail.png"],
+    images: ["/assets/thumbnail.webp"],
   },
   icons: "/favicon.ico",
 };
@@ -70,9 +70,9 @@ export default function RootLayout({
         <Analytics />
         <Navigation />
         <NavigationMobile />
-        <main className="min-h-[calc(100vh-96px)] md:min-h-[calc(100vh-112px)]">
-          {children}
-        </main>
+          <main className="min-h-[calc(100vh-96px)] md:min-h-[calc(100vh-112px)]">
+            {children}
+          </main>
         <Footer />
       </body>
     </html>

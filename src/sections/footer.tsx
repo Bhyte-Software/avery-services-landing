@@ -2,7 +2,7 @@ import { SlashSeparator } from "@/components/common/slash-separator"
 
 const Footer = () => {
     return (
-        <>
+        <aside className="w-full overflow-hidden">
             <SlashSeparator />
             <footer className='z-50 max-w-screen overflow-x-hidden bg-background px-2 pb-2 border-t border-edge'>
                 <div
@@ -12,7 +12,7 @@ const Footer = () => {
                     <span className=" text-xs md:text-sm text-foreground font-mono uppercase">A Bhyte Software Company</span>
                 </div>
             </footer>
-        </>
+        </aside>
     )
 }
 

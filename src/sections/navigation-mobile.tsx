@@ -17,20 +17,20 @@ const NavigationMobile = () => {
     };
 
     return (
-        <aside className="sticky top-0 z-50 lg:hidden w-full overflow-x-hidden">
+        <aside className="sticky top-2 z-50 lg:hidden w-full overflow-x-hidden border-y border-y-edge">
             <header
-                className="max-w-screen bg-background px-2 pt-2">
+                className="bg-background px-2">
                 <nav
-                    className="screen-line-before screen-line-after bg-white max-h-[calc(100dvh-2rem)] relative w-full gap-2 border-x border-edge font-mono"
+                    className="screen-line-before bg-white screen-line-after max-h-[calc(100dvh-2rem)] relative w-full gap-2 border-x border-edge font-mono"
                 >
 
-                    <div className="absolute -top-px -left-px h-3 w-3 border-t md:border-t-2 border-l md:border-l-2 border-neutral" />
-                    <div className="absolute -top-px -right-px h-3 w-3 border-t border-r md:border-t-2 md:border-r-2 border-neutral" />
+                    <div className="absolute -top-[0.1px] -left-px h-3 w-3 border-t md:border-t-2 border-l md:border-l-2 border-neutral" />
+                    <div className="absolute -top-[0.1px] -right-px h-3 w-3 border-t border-r md:border-t-2 md:border-r-2 border-neutral" />
                     <div className="absolute -bottom-[0.1px] -left-px h-3 w-3 border-b border-l md:border-b-2 md:border-l-2 border-neutral" />
                     <div className="absolute -bottom-[0.1px] -right-px h-3 w-3 border-b border-r md:border-b-2 md:border-r-2 border-neutral" />
 
 
-                    <div className=" w-full flex items-center justify-between sticky top-0 bg-linear-to-b from-white via-white/50 to-transparent z-50 pl-4 pr-4 py-2">
+                    <div className=" w-full flex items-center justify-between sticky top-0 z-50 pl-4 pr-4 py-2">
                         <Link href="/">
                             <div className="relative h-9 md:h-10 w-20 md:w-22">
                                 <Image fill src="/assets/culio-logo.svg" alt="Culio logo" className=" object-contain" />

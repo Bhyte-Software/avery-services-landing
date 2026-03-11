@@ -43,6 +43,10 @@ export function ConsentManager({ children }: { children: React.ReactNode }) {
           "banner.footer": {
             className: "border-t border-t-edge/50",
           },
+          "banner.footer.sub-group": {
+            noStyle: true,
+            className: "flex items-center gap-2",
+          },
           "banner.footer.reject-button": {
             noStyle: true,
             className: secondaryClasses,

@@ -82,7 +82,7 @@ const NavigationMobile = () => {
                                 animate={{ opacity: 1, height: "auto" }}
                                 exit={{ opacity: 0, height: 0 }}
                                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                                className="overflow-hidden md:hidden px-4"
+                                className="overflow-hidden lg:hidden px-4"
                             >
                                 <motion.div
                                     initial="hidden"

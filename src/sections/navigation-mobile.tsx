@@ -17,9 +17,9 @@ const NavigationMobile = () => {
     };
 
     return (
-        <aside className="lg:hidden">
+        <aside className="sticky top-0 z-50 lg:hidden w-full overflow-x-hidden">
             <header
-                className="sticky top-0 z-50 max-w-screen bg-background px-2 pt-2">
+                className="max-w-screen bg-background px-2 pt-2">
                 <nav
                     className="screen-line-before screen-line-after bg-white max-h-[calc(100dvh-2rem)] relative w-full gap-2 border-x border-edge font-mono"
                 >
@@ -156,7 +156,7 @@ const NavigationMobile = () => {
                                             hidden: { opacity: 0, y: 20 },
                                             visible: { opacity: 1, y: 0 },
                                         }}
-                                        className="mb-4"
+                                        className="mb-6"
                                         transition={{ duration: 0.3, ease: "easeOut" }}
                                     >
                                         <Link

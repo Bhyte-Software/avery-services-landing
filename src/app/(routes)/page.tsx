@@ -3,7 +3,7 @@ import Hero from "@/sections/hero"
 
 const HomePage = () => {
   return (
-    <div className="w-full">
+    <div className="w-screen overflow-x-hidden">
       <SlashSeparator />
       <Hero />
     </div>

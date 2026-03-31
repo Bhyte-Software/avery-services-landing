@@ -8,6 +8,27 @@ export function RoadmapTimeline() {
     const data = [
         {
             content: (
+                <div key="roadmap-0">
+                    <div className=" w-full h-66 md:h-72 lg:h-90 bg-white relative border border-edge">
+                        <Image fill src="/assets/thumbnail.webp" className=" object-cover object-top border border-white/10" quality={100} alt="Culio Dashboard Design" />
+                    </div>
+                    <h3 className="text-xl tracking-tight text-left mt-4 font-medium font-sans">
+                        Culio Dashboard — UX & UI Design Complete
+                    </h3>
+                    <h4 className=" mt-2 mb-4 text-sm font-normal text-muted-foreground">
+                        We&apos;ve wrapped up the full UX and UI design for the Culio Dashboard — your new command center for managing diners, orders, reservations, campaigns, and more, all from one clean, intuitive interface.
+                    </h4>
+                    <h4 className="text-sm font-normal text-muted-foreground pb-4">
+                        From real-time revenue charts and top-diner leaderboards to integrated feedback and team management, every pixel has been crafted to give restaurant owners instant clarity and total control. Engineering kicks off next.
+                    </h4>
+                    <Link href="/">
+                        <Button>Join Waitlist</Button>
+                    </Link>
+                </div>
+            ),
+        },
+        {
+            content: (
                 <div key="roadmap-1">
                     <div className=" w-full h-66 md:h-72 lg:h-90 bg-white relative border border-edge">
                         <Image fill src="/assets/roadmap-1.png" className=" object-contain object-top-left md:object-top border border-white/10" quality={100} alt="Changelog latest" />

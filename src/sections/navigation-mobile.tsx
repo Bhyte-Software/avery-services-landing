@@ -1,6 +1,5 @@
 "use client"
 
-import ForesightWordmark from "@/app/assets/Foresight-Wordmark.png";
 import { NavItem } from "@/components/common/nav-item";
 import { WaitlistButton } from "@/components/common/waitlist-button";
 import { Button } from "@/components/ui/button";
@@ -37,8 +36,10 @@ const NavigationMobile = () => {
                     <div className=" w-full flex items-center justify-between sticky top-0 z-50 pl-4 pr-4 py-2">
                         <Link href="/">
                             <Image
-                                src={ForesightWordmark}
+                                src="/assets/Foresight-Wordmark.png"
                                 alt="Foresight"
+                                width={160}
+                                height={40}
                                 priority
                                 className="h-9 w-auto md:h-10 object-contain"
                             />

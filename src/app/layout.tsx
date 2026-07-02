@@ -1,9 +1,10 @@
 import Footer from "@/sections/footer";
 import Navigation from "@/sections/navigation";
 import NavigationMobile from "@/sections/navigation-mobile";
-import ForesightLogomark from "@/app/assets/Foresight-Logomark.png";
-import { ConsentManager } from "@/components/common/consent-manager";
+import { ConsentManagerUI } from "@/components/common/consent-manager-ui";
+import { consentProviderOptions } from "@/components/common/consent-theme";
 import { Analytics } from "@vercel/analytics/next";
+import { ConsentManagerProvider } from "@c15t/nextjs";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -58,14 +59,8 @@ export const metadata: Metadata = {
     images: ["/assets/thumbnail.webp"],
   },
   icons: {
-    icon: [
-      {
-        url: ForesightLogomark.src,
-        type: "image/png",
-        sizes: `${ForesightLogomark.width}x${ForesightLogomark.height}`,
-      },
-    ],
-    apple: ForesightLogomark.src,
+    icon: "/assets/Foresight-Logomark.png",
+    apple: "/assets/Foresight-Logomark.png",
   },
 };
 
@@ -80,7 +75,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans select-none overflow-x-hidden`}
       >
-        <ConsentManager>
+        <ConsentManagerProvider options={consentProviderOptions}>
           <Analytics />
           <Navigation />
           <NavigationMobile />
@@ -88,7 +83,8 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-        </ConsentManager>
+          <ConsentManagerUI />
+        </ConsentManagerProvider>
       </body>
     </html>
   );

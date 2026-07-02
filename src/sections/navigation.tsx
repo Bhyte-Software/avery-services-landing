@@ -1,6 +1,5 @@
 "use client"
 
-import ForesightWordmark from "@/app/assets/Foresight-Wordmark.png"
 import { NavItem } from "@/components/common/nav-item"
 import { WaitlistButton } from "@/components/common/waitlist-button"
 import { navItems } from "@/constants"
@@ -28,8 +27,10 @@ const Navigation = () => {
                     <div className="flex flex-1 items-center justify-start">
                         <Link href="/">
                             <Image
-                                src={ForesightWordmark}
+                                src="/assets/Foresight-Wordmark.png"
                                 alt="Foresight"
+                                width={160}
+                                height={40}
                                 priority
                                 className="h-9 w-auto md:h-10 object-contain"
                             />

@@ -1,4 +1,5 @@
 import { SlashSeparator } from "@/components/common/slash-separator"
+import FinalCta from "@/sections/final-cta"
 import Hero from "@/sections/hero"
 
 const HomePage = () => {
@@ -6,6 +7,7 @@ const HomePage = () => {
     <div className="w-screen overflow-x-hidden">
       <SlashSeparator />
       <Hero />
+      <FinalCta />
     </div>
   )
 }

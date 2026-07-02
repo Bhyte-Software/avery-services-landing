@@ -7,6 +7,7 @@ const HomePage = () => {
     <div className="w-screen overflow-x-hidden">
       <SlashSeparator />
       <Hero />
+      <SlashSeparator />
       <FinalCta />
     </div>
   )

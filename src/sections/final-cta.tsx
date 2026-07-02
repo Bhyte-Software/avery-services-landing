@@ -1,7 +1,6 @@
 "use client"
 
 import CalTrigger from "@/components/common/cal-trigger"
-import { SlashSeparator } from "@/components/common/slash-separator"
 import { WaitlistButton } from "@/components/common/waitlist-button"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
@@ -9,8 +8,6 @@ import Image from "next/image"
 const FinalCta = () => {
     return (
         <section className="w-full overflow-x-hidden bg-[#F1F2EF] px-2">
-            <SlashSeparator />
-
             <div className="screen-line-before screen-line-after relative mx-auto w-full overflow-hidden border-x border-edge px-4 py-20 md:max-w-3xl lg:max-w-5xl lg:py-24 xl:max-w-6xl 2xl:max-w-7xl">
                 <Image
                     src="/assets/Ditter.png"

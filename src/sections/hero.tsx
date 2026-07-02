@@ -5,6 +5,7 @@ import { BorderBeam } from "@/components/ui/border-beam"
 import { TextAnimate } from "@/components/ui/text-animate"
 import { IconArrowRight } from "@tabler/icons-react"
 import { motion } from "motion/react"
+import Image from "next/image"
 
 const Hero = () => {
     return (
@@ -64,19 +65,28 @@ Built on Your Data.`}
                         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: 0.4 }}
-                        className="w-full max-w-xl px-4 pt-10 pb-4 md:px-0"
+                        className="w-full max-w-xl px-4 pt-10 md:px-0"
                     >
                         <EmailCapture />
                     </motion.div>
-                    <motion.span
+
+                    <motion.div
                         initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
                         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: 0.5 }}
-                        className="uppercase font-mono text-xs text-muted-foreground"
+                        className="relative mt-16 w-full max-w-3xl px-4 md:mt-24 md:max-w-4xl md:px-0 lg:mt-28"
                     >
-                        Early access spots are limited.
-                    </motion.span>
+                        <Image
+                            src="/assets/Card.svg"
+                            alt=""
+                            width={1117}
+                            height={662}
+                            priority
+                            aria-hidden
+                            className="h-auto w-full"
+                        />
+                    </motion.div>
                 </div>
             </div>
         </section>

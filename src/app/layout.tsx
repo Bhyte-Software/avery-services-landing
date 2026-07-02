@@ -1,10 +1,11 @@
 import Footer from "@/sections/footer";
 import Navigation from "@/sections/navigation";
 import NavigationMobile from "@/sections/navigation-mobile";
+import ForesightLogomark from "@/app/assets/Foresight-Logomark.png";
+import { ConsentManager } from "@/components/common/consent-manager";
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { ConvexClientProvider } from "./ConvexClientProvider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,35 +27,46 @@ const baseUrl = "https://culio.co";
 export const metadata: Metadata = {
   metadataBase: new URL(`${baseUrl}`),
   keywords: [
-    "Restaurant AI",
-    "Restaurant engagement",
-    "Automated ordering",
-    "Restaurant intelligence",
-    "Diner engagement",
-    "Restaurant technology",
-    "Host stand software",
-    "Culio",
-    "AI for restaurants",
+    "Financial intelligence",
+    "AI agents",
+    "Bookkeeping automation",
+    "Financial reconciliation",
+    "Anomaly detection",
+    "Foresight",
+    "Finance automation",
+    "AI for finance teams",
   ],
-  title: "Culio - AI-Driven Restaurant Engagement",
+  title: {
+    default: "Foresight | Financial Intelligence. Built on Your Data.",
+    template: "%s | Foresight",
+  },
   description:
-    "Culio gives your restaurant AI-driven engagement, automated ordering, and the strategic intelligence needed to turn every diner into a lifelong regular.",
+    "Deploy AI agents directly on top of your financial stack to handle bookkeeping, real-time reconciliation, and anomaly detection.",
   openGraph: {
-    title: "Culio - AI-Driven Restaurant Engagement",
-    siteName: "Culio",
+    title: "Foresight | Financial Intelligence. Built on Your Data.",
+    siteName: "Foresight",
     description:
-      "Culio gives your restaurant AI-driven engagement, automated ordering, and the strategic intelligence needed to turn every diner into a lifelong regular.",
+      "Deploy AI agents directly on top of your financial stack to handle bookkeeping, real-time reconciliation, and anomaly detection.",
     images: ["/assets/thumbnail.webp"],
     url: `${baseUrl}`,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Culio - AI-Driven Restaurant Engagement",
+    title: "Foresight | Financial Intelligence. Built on Your Data.",
     description:
-      "Culio gives your restaurant AI-driven engagement, automated ordering, and the strategic intelligence needed to turn every diner into a lifelong regular.",
+      "Deploy AI agents directly on top of your financial stack to handle bookkeeping, real-time reconciliation, and anomaly detection.",
     images: ["/assets/thumbnail.webp"],
   },
-  icons: "/favicon.ico",
+  icons: {
+    icon: [
+      {
+        url: ForesightLogomark.src,
+        type: "image/png",
+        sizes: `${ForesightLogomark.width}x${ForesightLogomark.height}`,
+      },
+    ],
+    apple: ForesightLogomark.src,
+  },
 };
 
 
@@ -68,15 +80,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans select-none overflow-x-hidden`}
       >
-        <Analytics />
-        <Navigation />
-        <NavigationMobile />
-        <main className="min-h-[calc(100vh-96px)] md:min-h-[calc(100vh-112px)]">
-          <ConvexClientProvider>
+        <ConsentManager>
+          <Analytics />
+          <Navigation />
+          <NavigationMobile />
+          <main className="min-h-[calc(100vh-96px)] md:min-h-[calc(100vh-112px)]">
             {children}
-          </ConvexClientProvider>
-        </main>
-        <Footer />
+          </main>
+          <Footer />
+        </ConsentManager>
       </body>
     </html>
   );

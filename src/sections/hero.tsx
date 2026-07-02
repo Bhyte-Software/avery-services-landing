@@ -6,9 +6,7 @@ import { BorderBeam } from "@/components/ui/border-beam"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { TextAnimate } from "@/components/ui/text-animate"
-import { api } from "../../convex/_generated/api"
 import { IconX } from "@tabler/icons-react"
-import { useMutation } from "convex/react"
 import { motion } from "motion/react"
 import Image from "next/image"
 import { useState } from "react"
@@ -18,19 +16,15 @@ const Hero = () => {
     const [submittedEmail, setSubmittedEmail] = useState("")
     const [isLoading, setIsLoading] = useState(false)
     const [isSuccessOpen, setIsSuccessOpen] = useState(false)
-    const joinWaitlist = useMutation(api.waitlist.join)
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         if (!email) return
         setIsLoading(true)
         try {
-            await joinWaitlist({ email })
             setSubmittedEmail(email)
             setEmail("")
             setIsSuccessOpen(true)
-        } catch (error) {
-            console.error("Failed to join waitlist:", error)
         } finally {
             setIsLoading(false)
         }

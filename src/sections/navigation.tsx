@@ -1,8 +1,8 @@
 "use client"
 
-import CalTrigger from "@/components/common/cal-trigger"
+import ForesightWordmark from "@/app/assets/Foresight-Wordmark.png"
 import { NavItem } from "@/components/common/nav-item"
-import { Button } from "@/components/ui/button"
+import { WaitlistButton } from "@/components/common/waitlist-button"
 import { navItems } from "@/constants"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
@@ -27,9 +27,12 @@ const Navigation = () => {
 
                     <div className="flex flex-1 items-center justify-start">
                         <Link href="/">
-                            <div className="relative h-9 md:h-10 w-20 md:w-22">
-                                <Image fill src="/assets/culio-logo.svg" alt="Culio logo" className=" object-contain" />
-                            </div>
+                            <Image
+                                src={ForesightWordmark}
+                                alt="Foresight"
+                                priority
+                                className="h-9 w-auto md:h-10 object-contain"
+                            />
                         </Link>
                     </div>
 
@@ -39,10 +42,11 @@ const Navigation = () => {
                     >
                         {navItems.map(({ title, href }) => {
                             const active =
-                                pathname === href ||
-                                (href === "/"
-                                    ? ["/", "/index"].includes(pathname || "")
-                                    : pathname?.startsWith(href))
+                                !href.includes("#") &&
+                                (pathname === href ||
+                                    (href === "/"
+                                        ? ["/", "/index"].includes(pathname || "")
+                                        : pathname?.startsWith(href)))
 
                             return (
                                 <NavItem key={href} href={href} active={active}>
@@ -53,9 +57,7 @@ const Navigation = () => {
                     </nav>
 
                     <div className="flex flex-1 items-center justify-end">
-                        <CalTrigger>
-                            <Button>Request Demo</Button>
-                        </CalTrigger>
+                        <WaitlistButton />
                     </div>
                 </div>
             </header>

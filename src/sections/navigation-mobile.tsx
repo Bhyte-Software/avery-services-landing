@@ -1,10 +1,13 @@
 "use client"
 
+import ForesightWordmark from "@/app/assets/Foresight-Wordmark.png";
+import { NavItem } from "@/components/common/nav-item";
+import { WaitlistButton } from "@/components/common/waitlist-button";
 import { Button } from "@/components/ui/button";
+import { navItems } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 
-import CalTrigger from "@/components/common/cal-trigger";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { FaXTwitter } from "react-icons/fa6";
@@ -33,15 +36,16 @@ const NavigationMobile = () => {
 
                     <div className=" w-full flex items-center justify-between sticky top-0 z-50 pl-4 pr-4 py-2">
                         <Link href="/">
-                            <div className="relative h-9 md:h-10 w-20 md:w-22">
-                                <Image fill src="/assets/culio-logo.svg" alt="Culio logo" className=" object-contain" />
-                            </div>
+                            <Image
+                                src={ForesightWordmark}
+                                alt="Foresight"
+                                priority
+                                className="h-9 w-auto md:h-10 object-contain"
+                            />
                         </Link>
 
                         <div className=" inline-flex items-center gap-3">
-                            <CalTrigger>
-                                <Button>Request Demo</Button>
-                            </CalTrigger>
+                            <WaitlistButton />
                             <motion.button
                                 initial="hide"
                                 animate={open ? "show" : "hide"}
@@ -101,55 +105,25 @@ const NavigationMobile = () => {
                                     }}
                                     className="pt-4 space-y-2.5"
                                 >
-                                    <motion.div
-                                        variants={{
-                                            hidden: { opacity: 0, y: 20 },
-                                            visible: { opacity: 1, y: 0 },
-                                        }}
-                                        transition={{ duration: 0.3, ease: "easeOut" }}
-                                    >
-                                        <Link
-                                            href="/"
-                                            className="block py-1 text-foreground text-base font-sans font-medium tracking-tight transition-colors duration-200"
-                                            onClick={() => setOpen(false)}
+                                    {navItems.map((item) => (
+                                        <motion.div
+                                            key={item.href}
+                                            variants={{
+                                                hidden: { opacity: 0, y: 20 },
+                                                visible: { opacity: 1, y: 0 },
+                                            }}
+                                            transition={{ duration: 0.3, ease: "easeOut" }}
+                                            className={item.href === navItems.at(-1)?.href ? "mb-6" : undefined}
                                         >
-                                            Home
-                                        </Link>
-                                    </motion.div>
-
-
-                                    <motion.div
-                                        variants={{
-                                            hidden: { opacity: 0, y: 20 },
-                                            visible: { opacity: 1, y: 0 },
-                                        }}
-                                        transition={{ duration: 0.3, ease: "easeOut" }}
-                                    >
-                                        <Link
-                                            href="/roadmap"
-                                            className="block py-1 text-foreground text-base font-sans font-medium tracking-tight transition-colors duration-200"
-                                            onClick={() => setOpen(false)}
-                                        >
-                                            Our Roadmap
-                                        </Link>
-                                    </motion.div>
-
-                                    <motion.div
-                                        variants={{
-                                            hidden: { opacity: 0, y: 20 },
-                                            visible: { opacity: 1, y: 0 },
-                                        }}
-                                        className="mb-6"
-                                        transition={{ duration: 0.3, ease: "easeOut" }}
-                                    >
-                                        <Link
-                                            href="mailto:contact@culio.co"
-                                            className="block py-1 text-foreground text-base font-sans font-medium tracking-tight transition-colors duration-200"
-                                            onClick={() => setOpen(false)}
-                                        >
-                                            Contact
-                                        </Link>
-                                    </motion.div>
+                                            <NavItem
+                                                href={item.href}
+                                                className="block py-1 text-base font-medium"
+                                                onClick={() => setOpen(false)}
+                                            >
+                                                {item.title}
+                                            </NavItem>
+                                        </motion.div>
+                                    ))}
 
                                     <motion.div
                                         variants={{

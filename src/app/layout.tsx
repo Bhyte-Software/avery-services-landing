@@ -2,6 +2,7 @@ import Footer from "@/sections/footer";
 import Navigation from "@/sections/navigation";
 import NavigationMobile from "@/sections/navigation-mobile";
 import { ConsentManagerUI } from "@/components/common/consent-manager-ui";
+import { HashScrollHandler } from "@/components/common/hash-scroll-handler";
 import { consentProviderOptions } from "@/components/common/consent-theme";
 import { Analytics } from "@vercel/analytics/next";
 import { ConsentManagerProvider } from "@c15t/nextjs";
@@ -77,6 +78,7 @@ export default function RootLayout({
       >
         <ConsentManagerProvider options={consentProviderOptions}>
           <Analytics />
+          <HashScrollHandler />
           <Navigation />
           <NavigationMobile />
           <main className="min-h-[calc(100vh-96px)] md:min-h-[calc(100vh-112px)]">

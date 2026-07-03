@@ -1,4 +1,5 @@
 import { EmailCapture } from "@/components/common/email-capture"
+import { NavItem } from "@/components/common/nav-item"
 import { navItems } from "@/constants"
 import Image from "next/image"
 import Link from "next/link"
@@ -76,13 +77,13 @@ const Footer = () => {
                             </h2>
                             <nav aria-label="Footer" className="flex flex-col gap-3">
                                 {navItems.map(({ title, href }) => (
-                                    <Link
+                                    <NavItem
                                         key={href}
                                         href={href}
-                                        className="w-fit text-sm text-muted-foreground transition-colors hover:text-[#12B76A]"
+                                        className="w-fit text-sm text-muted-foreground hover:text-[#12B76A]"
                                     >
                                         {title}
-                                    </Link>
+                                    </NavItem>
                                 ))}
                             </nav>
                         </div>

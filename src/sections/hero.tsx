@@ -78,24 +78,27 @@ Built on Your Data.`}
                         transition={{ duration: 0.4, delay: 0.5 }}
                         className="relative mt-16 w-full max-w-3xl px-4 md:mt-24 md:max-w-4xl md:px-0 lg:mt-28"
                     >
-                        <div className="relative mx-auto w-full max-w-[1117px]">
-                            <CardDiagram />
-                            <div
-                                className="-mt-4"
-                                style={{
-                                    width: `${(1112 / 1117) * 100}%`,
-                                    marginLeft: `${((554.348 - 564.667) / 1117) * 100}%`,
-                                }}
-                            >
-                                <Image
-                                    src="/assets/Frame 2147226446.svg"
-                                    alt=""
-                                    width={1112}
-                                    height={160}
-                                    priority
-                                    aria-hidden
-                                    className="block h-auto w-full"
-                                />
+                        <div className="max-md:overflow-x-auto max-md:overscroll-x-contain max-md:-mx-4 max-md:px-4 max-md:[scrollbar-width:none] max-md:[&::-webkit-scrollbar]:hidden">
+                            <div className="relative mx-auto w-full max-w-[1117px] max-md:min-w-[580px]">
+                                <CardDiagram />
+                                <div
+                                    className="-mt-4 max-md:-mt-2"
+                                    style={{
+                                        width: `${(1112 / 1117) * 100}%`,
+                                        marginLeft: `${((554.348 - 564.667) / 1117) * 100}%`,
+                                    }}
+                                >
+                                    <Image
+                                        src="/assets/Frame 2147226446.svg"
+                                        alt=""
+                                        width={1112}
+                                        height={160}
+                                        priority
+                                        aria-hidden
+                                        sizes="(max-width: 767px) 580px, 1112px"
+                                        className="block h-auto w-full"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </motion.div>

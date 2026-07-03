@@ -159,6 +159,14 @@
 
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
+  }
+
+  [id="impact"],
+  [id="agents"],
+  [id="why-us"],
+  [id="faqs"] {
+    scroll-margin-top: 6rem;
   }
 }
 

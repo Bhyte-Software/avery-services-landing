@@ -210,7 +210,7 @@ export function CardDiagram() {
                 height={662}
                 priority
                 aria-hidden
-                sizes="(max-width: 767px) 580px, (max-width: 1023px) 768px, 1117px"
+                sizes="(max-width: 767px) 320px, (max-width: 1023px) 768px, 1117px"
                 className="block h-auto w-full"
             />
 

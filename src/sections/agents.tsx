@@ -60,17 +60,22 @@ function AgentRow({
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 md:divide-x md:divide-edge">
-            {illustrationFirst ? (
-                <>
-                    {illustrationContent}
-                    {textContent}
-                </>
-            ) : (
-                <>
-                    {textContent}
-                    {illustrationContent}
-                </>
-            )}
+            <div
+                className={cn(
+                    "order-2",
+                    illustrationFirst ? "md:order-1" : "md:order-2"
+                )}
+            >
+                {illustrationContent}
+            </div>
+            <div
+                className={cn(
+                    "order-1",
+                    illustrationFirst ? "md:order-2" : "md:order-1"
+                )}
+            >
+                {textContent}
+            </div>
         </div>
     )
 }

@@ -45,8 +45,7 @@ const NavigationMobile = () => {
                             />
                         </Link>
 
-                        <div className=" inline-flex items-center gap-3">
-                            <WaitlistButton />
+                        <div className="inline-flex items-center">
                             <motion.button
                                 initial="hide"
                                 animate={open ? "show" : "hide"}
@@ -114,7 +113,6 @@ const NavigationMobile = () => {
                                                 visible: { opacity: 1, y: 0 },
                                             }}
                                             transition={{ duration: 0.3, ease: "easeOut" }}
-                                            className={item.href === navItems.at(-1)?.href ? "mb-6" : undefined}
                                         >
                                             <NavItem
                                                 href={item.href}
@@ -125,6 +123,18 @@ const NavigationMobile = () => {
                                             </NavItem>
                                         </motion.div>
                                     ))}
+
+                                    <motion.div
+                                        variants={{
+                                            hidden: { opacity: 0, y: 20 },
+                                            visible: { opacity: 1, y: 0 },
+                                        }}
+                                        transition={{ duration: 0.3, ease: "easeOut" }}
+                                        className="pt-2"
+                                        onClick={() => setOpen(false)}
+                                    >
+                                        <WaitlistButton className="w-full" />
+                                    </motion.div>
 
                                     <motion.div
                                         variants={{

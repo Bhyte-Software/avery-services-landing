@@ -80,18 +80,19 @@ Built on Your Data.`}
                     >
                         <div className="relative mx-auto w-full max-w-[1117px] max-md:max-w-[min(100%,20rem)] sm:max-md:max-w-[min(100%,24rem)]">
                             <CardDiagram />
-                            <div className="-mt-4 max-md:-mt-2 max-md:mx-auto max-md:w-[90%] md:w-[99.55%] md:ml-[calc((554.348-564.667)/1117*100%)]">
-                                <Image
-                                    src="/assets/Frame 2147226446.svg"
-                                    alt=""
-                                    width={1112}
-                                    height={160}
-                                    priority
-                                    aria-hidden
-                                    sizes="(max-width: 767px) 320px, 1112px"
-                                    className="block h-auto w-full"
-                                />
-                            </div>
+                        </div>
+
+                        <div className="relative mx-auto w-full max-w-[1117px] max-md:left-1/2 max-md:w-screen max-md:-translate-x-1/2 md:-mt-4 md:w-[99.55%] md:ml-[calc((554.348-564.667)/1117*100%)] md:translate-x-0">
+                            <Image
+                                src="/assets/Frame 2147226446.svg"
+                                alt=""
+                                width={1112}
+                                height={160}
+                                priority
+                                aria-hidden
+                                sizes="(max-width: 767px) 100vw, 1112px"
+                                className="block h-auto w-full max-md:[clip-path:inset(0_0_50%_0)]"
+                            />
                         </div>
                     </motion.div>
                 </div>

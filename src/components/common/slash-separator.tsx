@@ -12,7 +12,7 @@ export function SlashSeparator({ className }: { className?: string }) {
                 >
                     <div
                         aria-hidden
-                        className="absolute -left-[100vw] top-px bottom-px w-[200vw] bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] [--pattern-foreground:var(--color-edge)]/60"
+                        className="absolute -left-[100vw] top-0 bottom-px w-[200vw] bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] [--pattern-foreground:var(--color-edge)]/60"
                     />
                 </div>
             </div>

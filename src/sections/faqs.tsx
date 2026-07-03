@@ -42,11 +42,11 @@ function FaqTriggerIcon() {
         <>
             <IconPlus
                 aria-hidden
-                className="size-4 shrink-0 text-muted-foreground group-aria-expanded/accordion-trigger:hidden"
+                className="size-4 shrink-0 text-muted-foreground transition-colors group-hover/accordion-trigger:text-foreground group-aria-expanded/accordion-trigger:hidden"
             />
             <IconX
                 aria-hidden
-                className="hidden size-4 shrink-0 text-muted-foreground group-aria-expanded/accordion-trigger:inline"
+                className="hidden size-4 shrink-0 text-muted-foreground transition-colors group-hover/accordion-trigger:text-foreground group-aria-expanded/accordion-trigger:inline"
             />
         </>
     )
@@ -78,13 +78,13 @@ const Faqs = () => {
                             <AccordionItem
                                 key={faq.question}
                                 value={`faq-${index}`}
-                                className="border-edge px-6 md:px-8"
+                                className="border-edge"
                             >
-                                <AccordionTrigger className="py-5 text-base font-medium hover:no-underline md:py-6 md:text-lg **:data-[slot=accordion-trigger-icon]:hidden">
+                                <AccordionTrigger className="w-full px-6 py-5 text-base font-medium transition-colors duration-150 hover:bg-[#F1F2EF] hover:no-underline group-aria-expanded/accordion-trigger:bg-[#F1F2EF]/60 md:px-8 md:py-6 md:text-lg **:data-[slot=accordion-trigger-icon]:hidden">
                                     {faq.question}
                                     <FaqTriggerIcon />
                                 </AccordionTrigger>
-                                <AccordionContent className="pb-5 text-sm leading-relaxed text-muted-foreground md:pb-6 md:text-base">
+                                <AccordionContent className="px-6 pb-5 text-sm leading-relaxed text-muted-foreground md:px-8 md:pb-6 md:text-base">
                                     {faq.answer}
                                 </AccordionContent>
                             </AccordionItem>

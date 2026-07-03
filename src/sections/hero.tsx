@@ -5,6 +5,7 @@ import { BorderBeam } from "@/components/ui/border-beam"
 import { TextAnimate } from "@/components/ui/text-animate"
 import { IconArrowRight } from "@tabler/icons-react"
 import { motion } from "motion/react"
+import { CardDiagram } from "@/components/common/card-diagram"
 import Image from "next/image"
 
 const Hero = () => {
@@ -13,7 +14,7 @@ const Hero = () => {
             <div
                 className="screen-line-before screen-line-after relative mx-auto flex w-full flex-1 flex-col items-center md:max-w-3xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl border-x border-edge after:z-1 after:transition-[background-color]"
             >
-                <div className="flex w-full flex-col items-center pb-20 pt-20">
+                <div className="flex w-full flex-col items-center pt-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
                         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -78,15 +79,7 @@ Built on Your Data.`}
                         className="relative mt-16 w-full max-w-3xl px-4 md:mt-24 md:max-w-4xl md:px-0 lg:mt-28"
                     >
                         <div className="relative mx-auto w-full max-w-[1117px]">
-                            <Image
-                                src="/assets/Card.svg"
-                                alt=""
-                                width={1117}
-                                height={662}
-                                priority
-                                aria-hidden
-                                className="block h-auto w-full"
-                            />
+                            <CardDiagram />
                             <div
                                 className="-mt-4"
                                 style={{

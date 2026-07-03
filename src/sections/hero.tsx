@@ -77,15 +77,34 @@ Built on Your Data.`}
                         transition={{ duration: 0.4, delay: 0.5 }}
                         className="relative mt-16 w-full max-w-3xl px-4 md:mt-24 md:max-w-4xl md:px-0 lg:mt-28"
                     >
-                        <Image
-                            src="/assets/Card.svg"
-                            alt=""
-                            width={1117}
-                            height={662}
-                            priority
-                            aria-hidden
-                            className="h-auto w-full"
-                        />
+                        <div className="relative mx-auto w-full max-w-[1117px]">
+                            <Image
+                                src="/assets/Card.svg"
+                                alt=""
+                                width={1117}
+                                height={662}
+                                priority
+                                aria-hidden
+                                className="block h-auto w-full"
+                            />
+                            <div
+                                className="-mt-4"
+                                style={{
+                                    width: `${(1112 / 1117) * 100}%`,
+                                    marginLeft: `${((554.348 - 564.667) / 1117) * 100}%`,
+                                }}
+                            >
+                                <Image
+                                    src="/assets/Frame 2147226446.svg"
+                                    alt=""
+                                    width={1112}
+                                    height={160}
+                                    priority
+                                    aria-hidden
+                                    className="block h-auto w-full"
+                                />
+                            </div>
+                        </div>
                     </motion.div>
                 </div>
             </div>

@@ -123,19 +123,19 @@ Built on Your Data.`}
                         transition={{ duration: 0.4, delay: 0.5 }}
                         className="relative mt-12 flex w-full flex-col items-stretch md:mt-24 lg:mt-28"
                     >
-                        <div className="relative mx-auto w-full max-w-[1117px] px-4 max-md:max-w-[min(100%,20rem)] sm:max-md:max-w-[min(100%,24rem)] md:px-0">
+                        <div className="relative mx-auto w-full max-w-[1117px]">
                             <CardDiagram />
                         </div>
 
                         <div className="relative w-full border-t border-[#DBDBDB] md:-mt-4">
-                            <div className="relative mx-auto w-full max-w-[1117px] px-4 max-md:max-w-[min(100%,20rem)] sm:max-md:max-w-[min(100%,24rem)] md:px-0">
+                            <div className="relative mx-auto w-full max-w-[1117px]">
                                 <div
                                     aria-hidden
-                                    className="pointer-events-none absolute inset-y-0 w-px -translate-x-1/2 bg-[#DBDBDB]"
+                                    className="pointer-events-none absolute inset-y-0 hidden w-px -translate-x-1/2 bg-[#DBDBDB] md:block"
                                     style={{ left: CARD_DIAGRAM_CENTER_LINE }}
                                 />
                                 <TrustedLogoRow logos={TRUSTED_LOGOS_ROW_1} rowKey="row-1" />
-                                <div className="border-t border-[#DBDBDB]">
+                                <div className="hidden border-t border-[#DBDBDB] md:block">
                                     <TrustedLogoRow logos={TRUSTED_LOGOS_ROW_2} rowKey="row-2" />
                                 </div>
                             </div>

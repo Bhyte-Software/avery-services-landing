@@ -8,11 +8,56 @@ import { motion } from "motion/react"
 import { CardDiagram } from "@/components/common/card-diagram"
 import Image from "next/image"
 
+const CARD_DIAGRAM_WIDTH = 1117
+const CARD_DIAGRAM_CENTER_LINE = `${(554 / CARD_DIAGRAM_WIDTH) * 100}%`
+
+const TRUSTED_LOGO_CLASS = "h-6 w-auto max-w-full opacity-[0.84] md:h-7"
+
+type TrustedLogo = {
+    src: string
+    alt: string
+    width: number
+    height: number
+}
+
+const TRUSTED_LOGOS_ROW_1: TrustedLogo[] = [
+    { src: "/assets/Company Magnolia.svg", alt: "Magnolia", width: 151, height: 40 },
+    { src: "/assets/Company Leapyear.svg", alt: "Leapyear", width: 136, height: 40 },
+    { src: "/assets/Company Powersurge.svg", alt: "Powersurge", width: 165, height: 40 },
+    { src: "/assets/Company Hexahedron.svg", alt: "Hexahedron", width: 163, height: 40 },
+]
+
+const TRUSTED_LOGOS_ROW_2: TrustedLogo[] = [
+    { src: "/assets/Company Powersurge.svg", alt: "Powersurge", width: 165, height: 40 },
+    { src: "/assets/Company Hexahedron.svg", alt: "Hexahedron", width: 163, height: 40 },
+    { src: "/assets/Company Ikigai Labs.svg", alt: "Ikigai Labs", width: 163, height: 40 },
+    { src: "/assets/Company Leapyear.svg", alt: "Leapyear", width: 136, height: 40 },
+]
+
+function TrustedLogoRow({ logos, rowKey }: { logos: TrustedLogo[]; rowKey: string }) {
+    return (
+        <div className="grid min-h-20 grid-cols-4 md:min-h-[80px]">
+            {logos.map((logo) => (
+                <div key={`${rowKey}-${logo.alt}`} className="flex items-center justify-center px-2">
+                    <Image
+                        src={logo.src}
+                        alt={logo.alt}
+                        width={logo.width}
+                        height={logo.height}
+                        aria-hidden
+                        className={TRUSTED_LOGO_CLASS}
+                    />
+                </div>
+            ))}
+        </div>
+    )
+}
+
 const Hero = () => {
     return (
-        <section className="flex flex-col min-h-[calc(100vh-96px)] md:min-h-[calc(100vh-112px)] px-2 ">
+        <section className="flex flex-col px-2 md:min-h-[calc(100vh-112px)]">
             <div
-                className="screen-line-before screen-line-after relative mx-auto flex w-full flex-1 flex-col items-center md:max-w-3xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl border-x border-edge after:z-1 after:transition-[background-color]"
+                className="screen-line-before screen-line-after relative mx-auto flex w-full flex-col items-center md:flex-1 md:max-w-3xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl border-x border-edge after:z-1 after:transition-[background-color]"
             >
                 <div className="flex w-full flex-col items-center pt-20">
                     <motion.div
@@ -76,23 +121,24 @@ Built on Your Data.`}
                         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: 0.5 }}
-                        className="relative mt-12 flex w-full max-w-3xl flex-col items-center px-4 md:mt-24 md:max-w-4xl md:px-0 lg:mt-28"
+                        className="relative mt-12 flex w-full flex-col items-stretch md:mt-24 lg:mt-28"
                     >
-                        <div className="relative mx-auto w-full max-w-[1117px] max-md:max-w-[min(100%,20rem)] sm:max-md:max-w-[min(100%,24rem)]">
+                        <div className="relative mx-auto w-full max-w-[1117px] px-4 max-md:max-w-[min(100%,20rem)] sm:max-md:max-w-[min(100%,24rem)] md:px-0">
                             <CardDiagram />
                         </div>
 
-                        <div className="relative mx-auto w-full max-w-[1117px] max-md:left-1/2 max-md:w-screen max-md:-translate-x-1/2 md:-mt-4 md:w-[99.55%] md:ml-[calc((554.348-564.667)/1117*100%)] md:translate-x-0">
-                            <Image
-                                src="/assets/Frame 2147226446.svg"
-                                alt=""
-                                width={1112}
-                                height={160}
-                                priority
-                                aria-hidden
-                                sizes="(max-width: 767px) 100vw, 1112px"
-                                className="block h-auto w-full max-md:[clip-path:inset(0_0_50%_0)]"
-                            />
+                        <div className="relative w-full border-t border-[#DBDBDB] md:-mt-4">
+                            <div className="relative mx-auto w-full max-w-[1117px] px-4 max-md:max-w-[min(100%,20rem)] sm:max-md:max-w-[min(100%,24rem)] md:px-0">
+                                <div
+                                    aria-hidden
+                                    className="pointer-events-none absolute inset-y-0 w-px -translate-x-1/2 bg-[#DBDBDB]"
+                                    style={{ left: CARD_DIAGRAM_CENTER_LINE }}
+                                />
+                                <TrustedLogoRow logos={TRUSTED_LOGOS_ROW_1} rowKey="row-1" />
+                                <div className="border-t border-[#DBDBDB]">
+                                    <TrustedLogoRow logos={TRUSTED_LOGOS_ROW_2} rowKey="row-2" />
+                                </div>
+                            </div>
                         </div>
                     </motion.div>
                 </div>

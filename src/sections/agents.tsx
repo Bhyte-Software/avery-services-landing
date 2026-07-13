@@ -50,11 +50,13 @@ function AgentRow({
     const illustrationContent = (
         <div
             className={cn(
-                "flex items-center justify-center border-t border-edge bg-[#F1F2EF]/40 px-6 py-10 md:border-t-0 md:py-14",
-                illustrationClassName
+                "relative flex h-full w-full flex-col border-t border-edge px-0 py-6 md:border-t-0 md:p-8 lg:p-10",
+                illustrationFirst ? "" : "md:border-l md:border-edge"
             )}
         >
-            {illustration}
+            <div className="relative flex min-h-0 w-full flex-1 items-center justify-center">
+                {illustration}
+            </div>
         </div>
     )
 
@@ -62,8 +64,9 @@ function AgentRow({
         <div className="grid grid-cols-1 md:grid-cols-2 md:divide-x md:divide-edge">
             <div
                 className={cn(
-                    "order-2",
-                    illustrationFirst ? "md:order-1" : "md:order-2"
+                    "order-2 h-full min-h-0",
+                    illustrationFirst ? "md:order-1" : "md:order-2",
+                    illustrationClassName
                 )}
             >
                 {illustrationContent}
@@ -121,7 +124,8 @@ const Agents = () => {
                                 width={710}
                                 height={310}
                                 aria-hidden
-                                className="mx-auto h-auto w-full max-w-xl"
+                                sizes="100vw"
+                                className="block h-auto w-full"
                             />
                         }
                     />
@@ -144,14 +148,16 @@ const Agents = () => {
                             ]}
                             illustrationClassName="bg-white"
                             illustration={
-                                <Image
-                                    src="/assets/illustration2.svg"
-                                    alt=""
-                                    width={760}
-                                    height={726}
-                                    aria-hidden
-                                    className="mx-auto h-auto w-full max-w-xl"
-                                />
+                                <div className="relative min-h-[320px] w-full md:min-h-[480px]">
+                                    <Image
+                                        src="/assets/illustration2.svg"
+                                        alt=""
+                                        fill
+                                        aria-hidden
+                                        sizes="(max-width: 767px) 100vw, 50vw"
+                                        className="object-contain"
+                                    />
+                                </div>
                             }
                             illustrationFirst
                         />
